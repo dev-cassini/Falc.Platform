@@ -1,10 +1,17 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import {OidcSecurityService} from "angular-auth-oidc-client";
+import {OidcSecurityServiceStub} from "../../test/utilities/auth/oidc-security-service-stub";
+import {RouterModule} from "@angular/router";
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      declarations: [AppComponent],
+      imports: [RouterModule],
+      providers: [
+        {provide: OidcSecurityService, useClass: OidcSecurityServiceStub}
+      ]
     }).compileComponents();
   });
 
