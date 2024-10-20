@@ -14,6 +14,7 @@ import { AuthModule } from "angular-auth-oidc-client";
         silentRenew: true,
         useRefreshToken: true,
         renewTimeBeforeTokenExpiresInSeconds: 30,
+        secureRoutes: ['https://localhost']
       },
     }),
   ],

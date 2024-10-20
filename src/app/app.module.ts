@@ -6,6 +6,8 @@ import { RouterModule } from "@angular/router";
 import { routes } from "./app.routes";
 import { AuthConfigModule } from "./auth/auth-config.module";
 import {BrowserModule} from "@angular/platform-browser";
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {AuthInterceptor} from "angular-auth-oidc-client";
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -15,7 +17,9 @@ import {BrowserModule} from "@angular/platform-browser";
     RouterModule.forRoot(routes),
     AuthConfigModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
