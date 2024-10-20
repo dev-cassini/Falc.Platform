@@ -8,9 +8,15 @@ import { AuthConfigModule } from "./auth/auth-config.module";
 import {BrowserModule} from "@angular/platform-browser";
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {AuthInterceptor} from "angular-auth-oidc-client";
+import {UnauthorizedComponent} from "./auth/unauthorized/unauthorized.component";
+import {MyProfileComponent} from "./my-profile/my-profile.component";
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    MyProfileComponent,
+    UnauthorizedComponent],
   imports: [
     BrowserModule,
     CommonModule,

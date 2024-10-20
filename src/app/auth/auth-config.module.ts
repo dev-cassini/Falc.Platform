@@ -9,7 +9,7 @@ import { AuthModule } from "angular-auth-oidc-client";
         redirectUrl: window.location.origin,
         postLogoutRedirectUri: window.location.origin,
         clientId: 'FalcPlatform',
-        scope: 'openid profile offline_access',
+        scope: 'openid profile offline_access FalcIdentity_api',
         responseType: 'code',
         silentRenew: true,
         useRefreshToken: true,
