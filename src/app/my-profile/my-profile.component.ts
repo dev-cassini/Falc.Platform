@@ -1,8 +1,8 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {IdentityApiService} from "../services/identity/identity-api-service";
 import {Observable} from "rxjs";
-import {UserModel} from "../services/identity/models/user.model";
 import {OidcSecurityService} from "angular-auth-oidc-client";
+import {UserModel} from "../core/auth/services/identity/models/user.model";
+import {IdentityApiService} from "../core/auth/services/identity/identity-api-service";
 
 @Component({
   selector: 'app-my-profile',

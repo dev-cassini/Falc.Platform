@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 import {HomeComponent} from "./home/home.component";
-import {UnauthorizedComponent} from "./auth/unauthorized/unauthorized.component";
 import {MyProfileComponent} from "./my-profile/my-profile.component";
-import {AuthorizationGuard} from "./auth/authorization.guard";
+import {UnauthorizedComponent} from "./core/auth/unauthorized/unauthorized.component";
+import {AuthorizationGuard} from "./core/auth/authorization.guard";
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },

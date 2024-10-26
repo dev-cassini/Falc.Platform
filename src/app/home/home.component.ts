@@ -1,7 +1,6 @@
 import {Component, inject, OnDestroy, OnInit} from '@angular/core';
 import { OidcSecurityService } from "angular-auth-oidc-client";
-import {Subscription, tap} from "rxjs";
-import {IdentityApiService} from "../services/identity/identity-api-service";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-home',
@@ -10,7 +9,6 @@ import {IdentityApiService} from "../services/identity/identity-api-service";
 })
 export class HomeComponent implements OnInit, OnDestroy {
   private readonly oidcSecurityService = inject(OidcSecurityService);
-  private readonly identityApiService: IdentityApiService = inject(IdentityApiService);
   private readonly subscriptions: Subscription = new Subscription();
 
   public configuration$ = this.oidcSecurityService.getConfiguration();
@@ -24,14 +22,6 @@ export class HomeComponent implements OnInit, OnDestroy {
       }
     );
 
-    // this.userData$.subscribe((x) => {
-    //   console.log(x);
-    //   if (x.userData) {
-    //     this.identityApiService.getUser(x.userData.sub)
-    //       .pipe(tap((x) => console.log(x)))
-    //       .subscribe();
-    //   }
-    // })
     this.subscriptions.add(isAuthenticatedSubscription);
   }
 
