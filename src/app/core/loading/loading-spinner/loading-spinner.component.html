@@ -1,0 +1,16 @@
+@if(loading$ | async) {
+
+  <div class="spinner-container">
+    @if(customLoadingIndicator) {
+
+      <ng-container
+        *ngTemplateOutlet="customLoadingIndicator" />
+
+    } @else {
+
+      <img ngSrc="/assets/loading-spinner.svg" height="80" width="80" alt="Loading spinner">
+
+    }
+  </div>
+
+}

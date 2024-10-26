@@ -10,11 +10,13 @@ import {AuthInterceptor} from "angular-auth-oidc-client";
 import {MyProfileComponent} from "./my-profile/my-profile.component";
 import {UnauthorizedComponent} from "./core/auth/unauthorized/unauthorized.component";
 import {AuthConfigModule} from "./core/auth/auth-config.module";
+import {LoadingSpinnerComponent} from "./core/loading/loading-spinner/loading-spinner.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    LoadingSpinnerComponent,
     MyProfileComponent,
     UnauthorizedComponent],
   imports: [

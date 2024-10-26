@@ -1,10 +1,6 @@
-<ng-container *ngIf="user$ | async as user else loading">
+<ng-container *ngIf="user$ | async as user">
   <div class="user-profile-card">
     <h2>{{ user.id }}</h2>
     <p>Email: {{ user.email }}</p>
   </div>
 </ng-container>
-<ng-template #loading>
-  <img ngSrc="/assets/loading-spinner.svg" height="80" width="80" alt="Loading spinner">
-  <p>Loading user profile...</p>
-</ng-template>
