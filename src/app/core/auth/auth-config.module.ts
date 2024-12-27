@@ -5,11 +5,11 @@ import { AuthModule } from "angular-auth-oidc-client";
   imports: [
     AuthModule.forRoot({
       config: {
-        authority: 'https://localhost:44310',
-        redirectUrl: window.location.origin,
+        authority: 'https://falc.sts.local',
+        redirectUrl: `${window.location.origin}/callback`,
         postLogoutRedirectUri: window.location.origin,
         clientId: 'FalcPlatform',
-        scope: 'openid profile offline_access FalcIdentity_api',
+        scope: 'openid profile offline_access',
         responseType: 'code',
         silentRenew: true,
         useRefreshToken: true,

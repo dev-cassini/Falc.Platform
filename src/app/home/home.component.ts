@@ -1,6 +1,5 @@
 import {Component, inject, OnDestroy, OnInit} from '@angular/core';
 import { OidcSecurityService } from "angular-auth-oidc-client";
-import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-home',
@@ -9,29 +8,13 @@ import {Subscription} from "rxjs";
 })
 export class HomeComponent implements OnInit, OnDestroy {
   private readonly oidcSecurityService = inject(OidcSecurityService);
-  private readonly subscriptions: Subscription = new Subscription();
 
   public configuration$ = this.oidcSecurityService.getConfiguration();
   public userData$ = this.oidcSecurityService.userData$;
-  public isAuthenticated = false;
 
-  ngOnInit(): void {
-    const isAuthenticatedSubscription: Subscription = this.oidcSecurityService.isAuthenticated$.subscribe(
-      ({ isAuthenticated }) => {
-        this.isAuthenticated = isAuthenticated;
-      }
-    );
+  ngOnInit(): void {}
 
-    this.subscriptions.add(isAuthenticatedSubscription);
-  }
-
-  ngOnDestroy(): void {
-    this.subscriptions.unsubscribe();
-  }
-
-  login(): void {
-    this.oidcSecurityService.authorize();
-  }
+  ngOnDestroy(): void {}
 
   refreshSession(): void {
     this.oidcSecurityService
