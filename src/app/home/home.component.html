@@ -1,17 +1,1 @@
 <div>Welcome to home Route</div>
-
-<button (click)="logout()">Logout</button>
-<button (click)="logoffAndRevokeTokens()">Logout and revoke tokens</button>
-<button (click)="revokeAccessToken()">Revoke access token</button>
-<button (click)="revokeRefreshToken()">Revoke refresh token</button>
-<button (click)="refreshSession()">Refresh session</button>
-<hr />
-
-<br />
-userData
-<pre>{{ userData$ | async | json }}</pre>
-
-<br />
-
-Configuration loaded:
-<pre>{{ configuration$ | async | json }}</pre>

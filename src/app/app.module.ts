@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
@@ -11,6 +11,11 @@ import {MyProfileComponent} from "./my-profile/my-profile.component";
 import {UnauthorizedComponent} from "./core/auth/unauthorized/unauthorized.component";
 import {AuthConfigModule} from "./core/auth/auth-config.module";
 import {LoadingSpinnerComponent} from "./core/loading/loading-spinner/loading-spinner.component";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatButtonModule} from "@angular/material/button";
+import {MatMenuModule} from "@angular/material/menu";
+import {ToolbarComponent} from "./core/nav/toolbar/toolbar.component";
 
 @NgModule({
   declarations: [
@@ -18,13 +23,19 @@ import {LoadingSpinnerComponent} from "./core/loading/loading-spinner/loading-sp
     HomeComponent,
     LoadingSpinnerComponent,
     MyProfileComponent,
-    UnauthorizedComponent],
+    ToolbarComponent,
+    UnauthorizedComponent
+  ],
   imports: [
     BrowserModule,
     CommonModule,
     RouterModule.forRoot(routes),
     AuthConfigModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatMenuModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
