@@ -1,47 +1,43 @@
 <ng-container *ngIf="user$ | async as user">
-  <div class="user-profile-card">
-    <label for="username">Username</label>
-    <input
-      type="text"
-      class="form-control"
-      id="username"
-      required
-      [(ngModel)]="user.userName"
-      name="username"
-      readonly
-    />
+  <form id="my-profile-form" [formGroup]="myProfileForm">
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-title>Personal Details</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col">
+            <mat-label class="label">Username</mat-label>
+            <mat-form-field class="full-width">
+              <input matInput formControlName="username" readonly>
+            </mat-form-field>
+          </div>
+        </div>
 
-    <label for="email">Email</label>
-    <input
-      type="text"
-      class="form-control"
-      id="email"
-      required
-      [(ngModel)]="user.email"
-      name="email"
-      readonly
-    />
+        <div class="row">
+          <div class="col">
+            <mat-label class="label">Email</mat-label>
+            <mat-form-field class="full-width">
+              <input matInput formControlName="email" readonly>
+            </mat-form-field>
+          </div>
+        </div>
 
-    <label for="firstName">First Name</label>
-    <input
-      type="text"
-      class="form-control"
-      id="firstName"
-      required
-      [(ngModel)]="user.firstName"
-      name="firstName"
-      readonly
-    />
-
-    <label for="lastName">Last Name</label>
-    <input
-      type="text"
-      class="form-control"
-      id="lastName"
-      required
-      [(ngModel)]="user.lastName"
-      name="lastName"
-      readonly
-    />
-  </div>
+        <div class="row">
+          <div class="col">
+            <mat-label class="label">First Name</mat-label>
+            <mat-form-field class="full-width">
+              <input matInput formControlName="firstName" readonly>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-label class="label">Last Name</mat-label>
+            <mat-form-field class="full-width">
+              <input matInput formControlName="lastName" readonly>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </form>
 </ng-container>
