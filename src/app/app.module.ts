@@ -16,6 +16,7 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
 import {MatMenuModule} from "@angular/material/menu";
 import {ToolbarComponent} from "./core/nav/toolbar/toolbar.component";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import {ToolbarComponent} from "./core/nav/toolbar/toolbar.component";
     CommonModule,
     RouterModule.forRoot(routes),
     AuthConfigModule,
+    FormsModule,
     NgOptimizedImage,
     BrowserAnimationsModule,
     MatToolbarModule,
