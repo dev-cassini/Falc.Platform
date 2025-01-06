@@ -17,6 +17,7 @@ import { AuthModule } from "angular-auth-oidc-client";
         secureRoutes: [
           'https://localhost',
           'https://admin-api.falc.local',
+          'https://backend.falc.local',
         ],
       },
     }),

@@ -19,6 +19,7 @@ import { ToolbarComponent } from "./core/nav/toolbar/toolbar.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatCardModule } from "@angular/material/card";
 import { MatInputModule } from "@angular/material/input";
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { MatInputModule } from "@angular/material/input";
     MatMenuModule,
     MatCardModule,
     MatInputModule,
+    MatSlideToggleModule,
     ReactiveFormsModule
   ],
   providers: [
