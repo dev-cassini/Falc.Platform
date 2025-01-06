@@ -27,3 +27,11 @@ form {
 .col:last-child {
   margin-right: 0;
 }
+
+.marketing-preferences-row {
+  margin-top: 10px;
+}
+
+.marketing-preferences-property {
+  margin: 10px;
+}

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {IdentityApiService} from "./identity-api.service";
 import {finalize, Observable} from "rxjs";
 import {UserModel} from "./models/user.model";
-import {LoadingService} from "../../../loading/services/loading.service";
+import {LoadingService} from "../../app/core/loading/services/loading.service";
 
 @Injectable({
   providedIn: 'root'

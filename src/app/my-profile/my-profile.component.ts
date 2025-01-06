@@ -1,35 +1,51 @@
-import {Component, inject, OnInit} from '@angular/core';
-import {map, Observable} from "rxjs";
-import {UserModel} from "../core/auth/services/identity/models/user.model";
-import {IdentityApiFacadeService} from "../core/auth/services/identity/identity-api-facade.service";
-import {FormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { map, mergeMap, Subscription } from "rxjs";
+import { IdentityApiFacadeService } from "../../apis/identity/identity-api-facade.service";
+import { FormBuilder, UntypedFormGroup, Validators } from "@angular/forms";
+import { CommunicationsApiFacadeService } from "../../apis/backend/communications/communications-api-facade.service";
 
 @Component({
   selector: 'app-my-profile',
   templateUrl: './my-profile.component.html',
   styleUrl: './my-profile.component.css'
 })
-export class MyProfileComponent implements OnInit {
+export class MyProfileComponent implements OnInit, OnDestroy {
   private formBuilder = inject(FormBuilder);
 
-  public user$: Observable<UserModel> | undefined;
-  public myProfileForm: UntypedFormGroup = this.formBuilder.group({});
+  private userSubscription: Subscription | undefined;
+  public myProfileForm: UntypedFormGroup | undefined;
 
-  constructor(private readonly identityApiFacadeService: IdentityApiFacadeService) { }
+  constructor(
+    private readonly identityApiFacadeService: IdentityApiFacadeService,
+    private readonly communicationsApiFacade: CommunicationsApiFacadeService) { }
 
   ngOnInit() {
-    this.user$ = this.identityApiFacadeService.getUser()
+    this.userSubscription = this.identityApiFacadeService.getUser()
       .pipe(
-        map(x => {
-          this.myProfileForm = this.formBuilder.group({
-            username: [x.userName, Validators.required],
-            email: [x.email, Validators.required],
-            firstName: [x.firstName],
-            lastName: [x.lastName],
-          });
+        mergeMap((x) => this.communicationsApiFacade.getUser()
+          .pipe(map((y) => {
+            this.myProfileForm = this.formBuilder.group({
+              username: [x.userName, Validators.required],
+              email: [x.email, Validators.required],
+              firstName: [x.firstName],
+              lastName: [x.lastName],
+              marketingPreferences: this.formBuilder.group({
+                email: [y.marketingPreferences.email],
+                phone: [y.marketingPreferences.phone],
+                sms: [y.marketingPreferences.sms],
+              })
+            });
 
-          return x;
-        })
-      )
+            this.myProfileForm.get('marketingPreferences.email')?.disable();
+            this.myProfileForm.get('marketingPreferences.phone')?.disable();
+            this.myProfileForm.get('marketingPreferences.sms')?.disable();
+
+            return x;
+          }))
+      )).subscribe();
+  }
+
+  ngOnDestroy(): void {
+    this.userSubscription?.unsubscribe();
   }
 }
