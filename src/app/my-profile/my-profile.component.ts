@@ -22,7 +22,7 @@ export class MyProfileComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.userSubscription = this.identityApiFacadeService.getUser()
       .pipe(
-        mergeMap((x) => this.communicationsApiFacade.getUser()
+        mergeMap((x) => this.communicationsApiFacade.getMyUser()
           .pipe(map((y) => {
             this.myProfileForm = this.formBuilder.group({
               username: [x.userName, Validators.required],
