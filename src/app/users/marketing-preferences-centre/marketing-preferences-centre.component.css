@@ -1,0 +1,41 @@
+form {
+  padding: 0 16px;
+}
+.full-width {
+  width: 100%;
+}
+
+.card {
+  min-width: 120px;
+  margin: 20px auto;
+}
+
+.label {
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.col:last-child {
+  margin-right: 0;
+}
+
+.marketing-preferences-row {
+  margin-top: 10px;
+}
+
+.marketing-preferences-property {
+  margin: 10px;
+}
+
+.save-button {
+  float: right;
+}

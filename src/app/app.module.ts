@@ -6,9 +6,8 @@ import { RouterModule } from "@angular/router";
 import { routes } from "./app.routes";
 import { BrowserModule } from "@angular/platform-browser";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
-import { AuthInterceptor } from "angular-auth-oidc-client";
 import { MyProfileComponent } from "./my-profile/my-profile.component";
-import { UnauthorizedComponent } from "./core/auth/unauthorized/unauthorized.component";
+import { UnauthorizedComponent } from "./unauthorized/unauthorized.component";
 import { AuthConfigModule } from "./core/auth/auth-config.module";
 import { LoadingSpinnerComponent } from "./core/loading/loading-spinner/loading-spinner.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -20,13 +19,21 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatCardModule } from "@angular/material/card";
 import { MatInputModule } from "@angular/material/input";
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
+import { AuthInterceptor } from "angular-auth-oidc-client";
+import { HmacAuthorizationOverrideInterceptor } from "./core/auth/interceptors/hmac-authorization-override.interceptor";
+import {
+  MarketingPreferencesCentreComponent
+} from "./users/marketing-preferences-centre/marketing-preferences-centre.component";
+import { NotFoundComponent } from "./not-found/not-found.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoadingSpinnerComponent,
+    MarketingPreferencesCentreComponent,
     MyProfileComponent,
+    NotFoundComponent,
     ToolbarComponent,
     UnauthorizedComponent
   ],
@@ -48,6 +55,7 @@ import { MatSlideToggleModule } from "@angular/material/slide-toggle";
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: HmacAuthorizationOverrideInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })
