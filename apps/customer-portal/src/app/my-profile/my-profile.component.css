@@ -35,3 +35,11 @@ form {
 .marketing-preferences-property {
   margin: 10px;
 }
+
+.submit-button-container {
+  display: flex;
+
+  .spacer {
+    flex: 1;
+  }
+}

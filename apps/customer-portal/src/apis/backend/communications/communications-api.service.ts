@@ -17,6 +17,10 @@ export class CommunicationsApiService {
     return this.httpClient.get<UserModel>(`${BASE_URL}/${this.baseRoutePath}/users/me`);
   }
 
+  patchMyUser(request: PatchUserRequest): Observable<object> {
+    return this.httpClient.patch(`${BASE_URL}/${this.baseRoutePath}/users/me`, request);
+  }
+
   getUser(userId: string, hmacSignature: string): Observable<UserModel> {
     return this.httpClient
       .get<UserModel>(

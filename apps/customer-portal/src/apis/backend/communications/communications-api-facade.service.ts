@@ -21,6 +21,14 @@ export class CommunicationsApiFacadeService {
     );
   }
 
+  patchMyUser(request: PatchUserRequest): Observable<boolean> {
+    this.loadingService.loadingOn();
+    return this.communicationsApiService.patchMyUser(request).pipe(
+      map(() => true),
+      finalize(() => this.loadingService.loadingOff()),
+    );
+  }
+
   getUser(userId: string, hmacSignature: string): Observable<UserModel | ErrorResponse> {
     this.loadingService.loadingOn();
     return this.communicationsApiService.getUser(userId, hmacSignature).pipe(

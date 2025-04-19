@@ -1,31 +1,32 @@
-import {Component, ContentChild, Input, OnInit, TemplateRef} from "@angular/core";
-import {Observable, tap} from "rxjs";
-import {LoadingService} from "../services/loading.service";
-import {RouteConfigLoadEnd, RouteConfigLoadStart, Router} from "@angular/router";
+import { Component, ContentChild, Input, OnInit, TemplateRef } from "@angular/core";
+import { tap } from "rxjs";
+import { LoadingService } from "../services/loading.service";
+import { RouteConfigLoadEnd, RouteConfigLoadStart, Router } from "@angular/router";
 
 @Component({
   selector: "app-loading-spinner",
   templateUrl: "./loading-spinner.component.html",
-  styleUrls: ["./loading-spinner.component.scss"],
+  styleUrls: ["./loading-spinner.component.css"],
   standalone: false
 })
 export class LoadingSpinnerComponent implements OnInit {
-
-  loading$: Observable<boolean>;
-
   @Input()
   detectRouteTransitions = false;
 
   @ContentChild("loading")
   customLoadingIndicator: TemplateRef<any> | null = null;
 
+  loading: boolean = true;
+
   constructor(
     private loadingService: LoadingService,
-    private router: Router) {
-    this.loading$ = this.loadingService.loading$;
-  }
+    private router: Router) {}
 
   ngOnInit() {
+    this.loadingService.loading$.subscribe(x => {
+      this.loading = x;
+    })
+
     if (this.detectRouteTransitions) {
       this.router.events
         .pipe(

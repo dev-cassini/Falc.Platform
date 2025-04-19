@@ -1,5 +1,5 @@
 <ng-container *ngIf="myProfileForm">
-  <form id="my-profile-form" [formGroup]="myProfileForm">
+  <form id="my-profile-form" [formGroup]="myProfileForm" (ngSubmit)="onSubmit()">
     <mat-card class="card">
       <mat-card-header>
         <mat-card-title>Personal Details</mat-card-title>
@@ -58,5 +58,9 @@
         </div>
       </mat-card-content>
     </mat-card>
+    <div class="submit-button-container">
+      <span class="spacer"></span>
+      <button mat-raised-button color="primary" type="submit">Save</button>
+    </div>
   </form>
 </ng-container>
