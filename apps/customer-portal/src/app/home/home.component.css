@@ -67,6 +67,18 @@
     background: radial-gradient(circle at center, rgba(255, 31, 90, 0.2) 0%, transparent 70%);
 }
 
+.moon-outline {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    left: 50%;
+    top: 67%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
 .title-container {
     position: absolute;
     top: 15%;
@@ -92,11 +104,14 @@
         height: min(333px, 90vw);
         top: 33%;
     }
-
+    .moon-outline {
+        width: 353px;
+        height: 353px;
+        top: 33%;
+    }
     .title-container {
         top: 8%;
     }
-
     .vertical-text {
         font-size: 0.9rem;
         letter-spacing: 0.3rem;
@@ -111,11 +126,14 @@
         height: 420px;
         top: 40%;
     }
-
+    .moon-outline {
+        width: 440px;
+        height: 440px;
+        top: 40%;
+    }
     .title-container {
         top: 10%;
     }
-
     .vertical-text {
         font-size: 1.1rem;
         letter-spacing: 0.35rem;
@@ -130,11 +148,14 @@
         height: 500px;
         top: 48%;
     }
-
+    .moon-outline {
+        width: 520px;
+        height: 520px;
+        top: 48%;
+    }
     .title-container {
         top: 12%;
     }
-
     .vertical-text {
         font-size: 1.2rem;
         letter-spacing: 0.4rem;
@@ -149,11 +170,14 @@
         height: 33vw;
         top: 48%;
     }
-    
+    .moon-outline {
+        width: calc(33vw + 20px);
+        height: calc(33vw + 20px);
+        top: 48%;
+    }
     .title-container {
         top: 6%;
     }
-
     .vertical-text {
         font-size: 1rem;
         padding: 0.5rem;
@@ -167,11 +191,14 @@
         height: 500px;
         top: 48%;
     }
-
+    .moon-outline {
+        width: 520px;
+        height: 520px;
+        top: 48%;
+    }
     .title-container {
         top: 12%;
     }
-
     .vertical-text {
         font-size: 1.3rem;
         letter-spacing: 0.5rem;
