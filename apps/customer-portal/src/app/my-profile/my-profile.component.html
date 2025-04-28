@@ -1,66 +1,174 @@
 <ng-container *ngIf="myProfileForm">
   <form id="my-profile-form" [formGroup]="myProfileForm" (ngSubmit)="onSubmit()">
-    <mat-card class="card">
-      <mat-card-header>
-        <mat-card-title>Personal Details</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
+    <div class="card bg-base-100 w-96 shadow-sm">
+      <div class="card-body">
+        <div class="card-title">Personal Details</div>
         <div class="row">
           <div class="col">
-            <mat-label class="label">Username</mat-label>
-            <mat-form-field class="full-width">
-              <input matInput formControlName="username" readonly>
-            </mat-form-field>
+            <label class="input">
+              <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <g
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                  stroke-width="2.5"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </g>
+              </svg>
+              <input
+                type="input"
+                disabled
+                required
+                placeholder="Username"
+                pattern="[A-Za-z][A-Za-z0-9\-]*"
+                minlength="3"
+                maxlength="30"
+                title="Only letters, numbers or dash"
+              />
+            </label>
           </div>
         </div>
-
         <div class="row">
           <div class="col">
-            <mat-label class="label">Email</mat-label>
-            <mat-form-field class="full-width">
-              <input matInput formControlName="email" readonly>
-            </mat-form-field>
+            <label class="input">
+              <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <g
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                  stroke-width="2.5"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </g>
+              </svg>
+              <input type="email" placeholder="mail@site.com" required disabled />
+            </label>
           </div>
         </div>
-
         <div class="row">
           <div class="col">
-            <mat-label class="label">First Name</mat-label>
-            <mat-form-field class="full-width">
-              <input matInput formControlName="firstName" readonly>
-            </mat-form-field>
+            <fieldset class="fieldset">
+              <legend class="fieldset-legend">First Name</legend>
+              <input type="text" class="input" placeholder="Type here" disabled />
+            </fieldset>
           </div>
           <div class="col">
-            <mat-label class="label">Last Name</mat-label>
-            <mat-form-field class="full-width">
-              <input matInput formControlName="lastName" readonly>
-            </mat-form-field>
+            <fieldset class="fieldset">
+              <legend class="fieldset-legend">Last Name</legend>
+              <input type="text" class="input" placeholder="Type here" disabled />
+            </fieldset>
           </div>
         </div>
-      </mat-card-content>
-    </mat-card>
+      </div>
+    </div>
 
-    <mat-card class="card">
-      <mat-card-header>
-        <mat-card-title>Marketing Preferences</mat-card-title>
-      </mat-card-header>
-      <mat-card-content formGroupName="marketingPreferences">
-        <div class="row marketing-preferences-row">
-          <div class="marketing-preferences-property">
-            <mat-slide-toggle formControlName="email" labelPosition="before">Email</mat-slide-toggle>
-          </div>
-          <div class="marketing-preferences-property">
-            <mat-slide-toggle formControlName="phone" labelPosition="before">Phone</mat-slide-toggle>
-          </div>
-          <div class="marketing-preferences-property">
-            <mat-slide-toggle formControlName="sms" labelPosition="before">SMS</mat-slide-toggle>
+    <div class="card bg-base-100 w-96 shadow-sm">
+      <div class="card-body">
+        <div class="card-title">Marketing Preferences</div>
+        <div formGroupName="marketingPreferences">
+          <div class="row marketing-preferences-row">
+            <div class="marketing-preferences-property">
+              Email
+              <label class="toggle text-base-content ml-1">
+                <input type="checkbox" />
+                <svg aria-label="enabled" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <g
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    stroke-width="4"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </g>
+                </svg>
+                <svg
+                  aria-label="disabled"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg>
+              </label>
+            </div>
+            <div class="marketing-preferences-property">
+              Phone
+              <label class="toggle text-base-content ml-1">
+                <input type="checkbox" />
+                <svg aria-label="enabled" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <g
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    stroke-width="4"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </g>
+                </svg>
+                <svg
+                  aria-label="disabled"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg>
+              </label>
+            </div>
+            <div class="marketing-preferences-property">
+              SMS
+              <label class="toggle text-base-content ml-1">
+                <input type="checkbox" />
+                <svg aria-label="enabled" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <g
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    stroke-width="4"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </g>
+                </svg>
+                <svg
+                  aria-label="disabled"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg>
+              </label>
+            </div>
           </div>
         </div>
-      </mat-card-content>
-    </mat-card>
+      </div>
+    </div>
     <div class="submit-button-container">
       <span class="spacer"></span>
-      <button mat-raised-button color="primary" type="submit">Save</button>
+      <input type="submit" value="Submit" class="btn" />
     </div>
   </form>
 </ng-container>
