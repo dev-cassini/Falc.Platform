@@ -34,6 +34,10 @@ export class NavbarComponent implements OnInit {
     this.oidcSecurityService.logoff().subscribe();
   }
 
+  navigateToHomePage(): void {
+    this.router.navigate(['/home']).then();
+  }
+
   navigateToLoginPage(): void {
     this.oidcSecurityService.authorize();
   }

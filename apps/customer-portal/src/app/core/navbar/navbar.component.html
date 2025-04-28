@@ -1,7 +1,14 @@
 <div class="navbar bg-base-100 shadow-sm">
   <div class="navbar-start">
     <a class="btn btn-ghost">
-      <img ngSrc="assets/falc-logo.svg" alt="FALC Logo" priority="" height="150" width="200" />
+      <img
+        ngSrc="assets/falc-logo.svg"
+        alt="FALC Logo"
+        priority=""
+        height="150"
+        width="200"
+        (click)="navigateToHomePage()"
+      />
     </a>
   </div>
   <div class="navbar-center hidden lg:flex">
