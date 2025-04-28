@@ -2,12 +2,6 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from 'angular-auth-oidc-client';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatInputModule } from '@angular/material/input';
-import { MatCardModule } from '@angular/material/card';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { AuthConfigModule, HmacAuthorizationOverrideInterceptor } from '@falc-platform/shared/auth';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
@@ -44,12 +38,6 @@ import { NavbarComponent } from './core/navbar/navbar.component';
     FormsModule,
     NgOptimizedImage,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatCardModule,
-    MatInputModule,
-    MatSlideToggleModule,
     ReactiveFormsModule,
     NavbarComponent
   ],

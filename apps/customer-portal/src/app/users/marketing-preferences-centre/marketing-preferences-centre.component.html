@@ -1,25 +1,104 @@
 <ng-container *ngIf="marketingPreferencesCentreForm">
   <form id="marketing-preferences-centre-form" [formGroup]="marketingPreferencesCentreForm">
-    <mat-card class="card">
-      <mat-card-header>
-        <mat-card-title>Marketing Preferences</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
+    <div class="card bg-base-100 w-96 shadow-sm">
+      <div class="card-body">
+        <div class="card-title">Marketing Preferences</div>
         <div class="row marketing-preferences-row">
           <div class="marketing-preferences-property">
-            <mat-slide-toggle formControlName="email" labelPosition="before">Email</mat-slide-toggle>
+            Email
+            <label class="toggle text-base-content ml-1">
+              <input type="checkbox" />
+              <svg aria-label="enabled" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <g
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                  stroke-width="4"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path d="M20 6 9 17l-5-5"></path>
+                </g>
+              </svg>
+              <svg
+                aria-label="disabled"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+              </svg>
+            </label>
           </div>
           <div class="marketing-preferences-property">
-            <mat-slide-toggle formControlName="phone" labelPosition="before">Phone</mat-slide-toggle>
+            Phone
+            <label class="toggle text-base-content ml-1">
+              <input type="checkbox" />
+              <svg aria-label="enabled" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <g
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                  stroke-width="4"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path d="M20 6 9 17l-5-5"></path>
+                </g>
+              </svg>
+              <svg
+                aria-label="disabled"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+              </svg>
+            </label>
           </div>
           <div class="marketing-preferences-property">
-            <mat-slide-toggle formControlName="sms" labelPosition="before">SMS</mat-slide-toggle>
+            SMS
+            <label class="toggle text-base-content ml-1">
+              <input type="checkbox" />
+              <svg aria-label="enabled" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <g
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                  stroke-width="4"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path d="M20 6 9 17l-5-5"></path>
+                </g>
+              </svg>
+              <svg
+                aria-label="disabled"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+              </svg>
+            </label>
           </div>
         </div>
-      </mat-card-content>
-    </mat-card>
+      </div>
+    </div>
     <div class="save-button">
-      <button mat-flat-button (click)="saveMarketingPreference()">Save</button>
+      <input type="submit" value="Submit" class="btn" (click)="saveMarketingPreference()" />
     </div>
   </form>
 </ng-container>
