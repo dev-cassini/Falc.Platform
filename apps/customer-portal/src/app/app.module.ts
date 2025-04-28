@@ -23,7 +23,7 @@ import { routes } from './app.routes';
 import {
   MarketingPreferencesCentreComponent
 } from './users/marketing-preferences-centre/marketing-preferences-centre.component';
-import { ToolbarComponent } from './core/nav/toolbar/toolbar.component';
+import { NavbarComponent } from './core/navbar/navbar.component';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -51,7 +51,7 @@ import { ToolbarComponent } from './core/nav/toolbar/toolbar.component';
     MatInputModule,
     MatSlideToggleModule,
     ReactiveFormsModule,
-    ToolbarComponent
+    NavbarComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

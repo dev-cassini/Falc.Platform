@@ -1,14 +1,14 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { LoginResponse, OidcSecurityService } from 'angular-auth-oidc-client';
-import { Router } from "@angular/router";
-import { map, Observable } from 'rxjs';
 import { AsyncPipe, NgOptimizedImage } from '@angular/common';
-import { UserInitialsPipe } from '../../../../../../../shared/src/lib/auth/pipes/user-initials.pipe';
+import { UserInitialsPipe } from '../../../../../../shared/src/lib/auth/pipes/user-initials.pipe';
+import { LoginResponse, OidcSecurityService } from 'angular-auth-oidc-client';
+import { Router } from '@angular/router';
+import { map, Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-toolbar',
-  templateUrl: './toolbar.component.html',
-  styleUrl: './toolbar.component.css',
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.css',
   imports: [
     AsyncPipe,
     UserInitialsPipe,
@@ -16,7 +16,7 @@ import { UserInitialsPipe } from '../../../../../../../shared/src/lib/auth/pipes
   ],
   standalone: true
 })
-export class ToolbarComponent implements OnInit {
+export class NavbarComponent implements OnInit {
   private readonly oidcSecurityService = inject(OidcSecurityService);
   private readonly router = inject(Router);
 
