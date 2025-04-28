@@ -23,7 +23,7 @@
           },
           "apps/customer-portal/src/assets"
         ],
-        "styles": ["apps/customer-portal/src/styles.scss"],
+        "styles": ["apps/customer-portal/src/styles.css"],
         "scripts": []
       },
       "configurations": {

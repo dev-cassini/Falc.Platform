@@ -13,7 +13,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import { ToolbarComponent } from './core/nav/toolbar/toolbar.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { LoadingSpinnerComponent } from './core/loading/loading-spinner/loading-spinner.component';
 import { NgModule } from '@angular/core';
@@ -24,6 +23,7 @@ import { routes } from './app.routes';
 import {
   MarketingPreferencesCentreComponent
 } from './users/marketing-preferences-centre/marketing-preferences-centre.component';
+import { ToolbarComponent } from './core/nav/toolbar/toolbar.component';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -34,7 +34,6 @@ import {
     MarketingPreferencesCentreComponent,
     MyProfileComponent,
     NotFoundComponent,
-    ToolbarComponent,
     UnauthorizedComponent,
   ],
   imports: [
@@ -52,6 +51,7 @@ import {
     MatInputModule,
     MatSlideToggleModule,
     ReactiveFormsModule,
+    ToolbarComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

@@ -12,11 +12,7 @@ export const routes: Routes = [
   { path: 'unauthorized', component: UnauthorizedComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  {
-    path: 'home',
-    component: HomeComponent,
-    canActivate: [AutoLoginPartialRoutesGuard]
-  },
+  { path: 'home', component: HomeComponent },
   {
     path: 'my-profile',
     component: MyProfileComponent,
