@@ -1,17 +1,10 @@
 form {
   padding: 0 16px;
 }
-.full-width {
-  width: 100%;
-}
 
 .card {
   min-width: 120px;
   margin: 20px auto;
-}
-
-.label {
-  margin-bottom: 10px;
 }
 
 .row {
