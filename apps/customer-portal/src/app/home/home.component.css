@@ -7,7 +7,7 @@
     overflow: hidden;
 }
   
-#orbit-system {
+.orbit-system {
     position: relative;
     width: 850px;
     height: 850px;
@@ -53,11 +53,11 @@
 }
 
 .moon-outline {
-    width: 520px;
-    height: 520px;
-    margin-top: -260px;
-    margin-left: -260px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 510px;
+    height: 510px;
+    margin-top: -255px;
+    margin-left: -255px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     pointer-events: none;
     
@@ -177,5 +177,105 @@
 
     100% {
         transform: rotateZ(0deg) rotateY(30deg) rotateX(-75deg);
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+    .orbit-system {
+        width: 360px;
+        height: 660px;
+    }
+
+    .moon {
+        width: 250px;
+        height: 250px;
+        margin-top: -125px;
+        margin-left: -125px;
+    }
+
+    .moon-outline {
+        width: 255px;
+        height: 255px;
+        margin-top: -127.5px;
+        margin-left: -127.5px;
+    }
+
+    .satellite-orbit {
+        width: 420px;
+        height: 420px;
+        margin-top: -210px;
+        margin-left: -210px;
+    }
+
+    .satellite {
+        top: 100%;
+        width: 15px;
+        height: 15px;
+    }
+
+    .title-container {
+        top: 20%;
+    }
+    
+    .vertical-text {
+        writing-mode: vertical-lr;
+        text-orientation: upright;
+        color: white;
+        font-family: 'Arial', sans-serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.5rem;
+        padding: 0.7rem;
+        border: 1.5px solid white;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    .orbit-system {
+        width: 700px;
+        height: 900px;
+    }
+
+    .moon {
+        width: 350px;
+        height: 350px;
+        margin-top: -175px;
+        margin-left: -175px;
+    }
+
+    .moon-outline {
+        width: 360px;
+        height: 360px;
+        margin-top: -180px;
+        margin-left: -180px;
+    }
+
+    .satellite-orbit {
+        width: 520px;
+        height: 520px;
+        margin-top: -260px;
+        margin-left: -260px;
+    }
+
+    .satellite {
+        top: 100%;
+        width: 20px;
+        height: 20px;
+    }
+
+    .title-container {
+        top: 20%;
+    }
+    
+    .vertical-text {
+        writing-mode: vertical-lr;
+        text-orientation: upright;
+        color: white;
+        font-family: 'Arial', sans-serif;
+        font-size: 1.2rem;
+        letter-spacing: 0.5rem;
+        padding: 0.85rem;
+        border: 1.8px solid white;
     }
 }
