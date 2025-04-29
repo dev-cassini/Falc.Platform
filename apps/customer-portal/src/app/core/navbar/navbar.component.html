@@ -1,13 +1,12 @@
-<div class="navbar bg-base-100 shadow-sm">
-  <div class="navbar-start">
-    <a class="btn btn-ghost">
+<div class="navbar bg-base-100 shadow-sm border-base-content falc-navbar">
+  <div class="navbar-start ml-6">
+    <a class="btn btn-link" (click)="navigateToHomePage()">
       <img
         ngSrc="assets/falc-logo.svg"
         alt="FALC Logo"
         priority=""
-        height="150"
-        width="200"
-        (click)="navigateToHomePage()"
+        height="75"
+        width="100"
       />
     </a>
   </div>
@@ -18,7 +17,7 @@
   <div class="navbar-end">
     @if (userDataResult$ | async; as userDataResult) {
       @if (userDataResult.userData) {
-        <div class="dropdown dropdown-end">
+        <div class="dropdown dropdown-end mr-6">
           <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
             {{ userDataResult | userInitials }}
           </div>
@@ -30,10 +29,10 @@
           </ul>
         </div>
       } @else {
-        <a class="btn" (click)="navigateToLoginPage()">SIGN IN</a>
+        <a class="btn btn-soft mr-6" (click)="navigateToLoginPage()">SIGN IN</a>
       }
     } @else {
-      <a class="btn" (click)="navigateToLoginPage()">SIGN IN</a>
+      <a class="btn btn-soft mr-6" (click)="navigateToLoginPage()">SIGN IN</a>
     }
   </div>
 </div>

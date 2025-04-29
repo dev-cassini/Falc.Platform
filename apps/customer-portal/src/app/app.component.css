@@ -1,0 +1,8 @@
+.app-container {
+  margin: 20px;
+}
+
+.falc-navbar {
+  position: sticky;
+  overflow: hidden;
+}
