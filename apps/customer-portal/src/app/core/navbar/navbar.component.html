@@ -16,11 +16,11 @@
     </ul>
   </div>
   <div class="navbar-end">
-    @if (loginResponse$ | async; as loginResponse) {
-      @if (loginResponse.isAuthenticated) {
+    @if (userDataResult$ | async; as userDataResult) {
+      @if (userDataResult.userData) {
         <div class="dropdown dropdown-end">
           <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-            {{ loginResponse | userInitials }}
+            {{ userDataResult | userInitials }}
           </div>
           <ul
             tabindex="0"
